@@ -1,7 +1,9 @@
 # Dot net core Estudo
 
 
+
 ## C# Fundamentals
+[C# Fundamentals with Visual Studio 2015](https://app.pluralsight.com/library/courses/c-sharp-fundamentals-with-visual-studio-2015/table-of-contents)
 
 ### Intruducao
 
@@ -33,6 +35,15 @@ Toda variavel no C# precisa ser declarada com tipo.
 Generic Lists devem ser instanciadas antes de utilizar
 
 Metodos e atributos estaticos são chamados utilizando apenas '.' após o nome da classe
+
+### Assemblies
+
+Pacotes sao salvos em DLL. 
+Para adicionar devemos ir em references no visual Studio. Onde podemos buscar na web, em arquivos locais ou dentro da solução(Em um novo projeto de teste dentro da solução é um exemplo disso).
+
+Após adicionar um assembly no projeto, é possivel referenciar ao seu namespace com 'using'
+
+É possivel navegar no assembly. Basta ir na sua referencia, clicar com botao direito e em 'View in Object Browser'
 
 ### CLI
 
