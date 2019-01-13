@@ -26,6 +26,13 @@ public class Program
 }
 ```
 
+Toda variavel no C# precisa ser declarada com tipo.
+
+### Classes
+
+Generic Lists devem ser instanciadas antes de utilizar
+
+Metodos e atributos estaticos são chamados utilizando apenas '.' após o nome da classe
 
 ### CLI
 
