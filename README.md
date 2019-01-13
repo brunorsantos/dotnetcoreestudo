@@ -1,5 +1,6 @@
 # Dot net core Estudo
 
+[C# Fundamentals with Visual Studio 2015](https://app.pluralsight.com/library/courses/c-sharp-fundamentals-with-visual-studio-2015/table-of-contents)
 
 ## C# Fundamentals
 
