@@ -1,6 +1,39 @@
 # Dot net core Estudo
 
 
+## C# Fundamentals
+
+### Intruducao
+
+CLR (Common Language Runtime) - Ambiente de execução para a linguagem, reponsavel pela execucao. Cuida do gerenciamento de memoria, gerenciamento de hardware e sistema operacional e gerencia a linguagem que está a aplicacao (C#, Visual Basic, S#...).
+
+
+FCL (Framework Class Library) - Provem a funcionalidades para codificar a aplicação
+
+O CLR procura a metodo estatico main da classe Program para iniciar a execução.
+
+Namespaces são separado utilizando '.'
+
+```c
+using System;
+
+public class Program
+{
+    static void Main(){
+        Console.WriteLine("Hello World");
+        // System.Console.WriteLine('Hello World');
+    }
+}
+```
+
+Toda variavel no C# precisa ser declarada com tipo.
+
+### Classes
+
+Generic Lists devem ser instanciadas antes de utilizar
+
+Metodos e atributos estaticos são chamados utilizando apenas '.' após o nome da classe
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
