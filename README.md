@@ -45,6 +45,12 @@ Após adicionar um assembly no projeto, é possivel referenciar ao seu namespace
 
 É possivel navegar no assembly. Basta ir na sua referencia, clicar com botao direito e em 'View in Object Browser'
 
+### Types
+
+Struct e enum, são tipos que são utilizados como constantes, com a vantagem e serem similares a objetos no sentido de poderem ser criados tipos para obrigar a utilizar uma passagem de parametro via enum ou struct.
+
+Enum só permite valores numericos (utilizado para evitar numeros magicos no codigo)
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
