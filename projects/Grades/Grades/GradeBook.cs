@@ -8,6 +8,7 @@ namespace Grades
 {
     public class GradeBook
     {
+        public String Name;
         public GradeBook()
         {
             grades = new List<float>();
