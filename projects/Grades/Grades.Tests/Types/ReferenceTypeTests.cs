@@ -11,6 +11,22 @@ namespace Grades.Tests.Types
     public class TypeTests
     {
         [TestMethod]
+        public void UsingArrays()
+        {
+            float[] grades;
+            grades = new float[3];
+
+            AddGrades(grades);
+            Assert.AreEqual(81.9f, grades[1]);
+        }
+
+
+        private void AddGrades(float[] grades)
+        {
+            grades[1] = 81.9f;
+        }
+
+        [TestMethod]
         public void UppercaseString()       
         {
             string name = "name";
