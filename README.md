@@ -51,6 +51,12 @@ Struct e enum, são tipos que são utilizados como constantes, com a vantagem e 
 
 Enum só permite valores numericos (utilizado para evitar numeros magicos no codigo)
 
+Array tem tamanho fixo em C#. O tamanho até pode ser mudado, porém é uma operação cara.
+Array é um tipo de referencia, isto é utlizado como objeto
+```c
+float[] grades;
+grades = new float[3];
+```
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
