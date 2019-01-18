@@ -57,6 +57,24 @@ Array é um tipo de referencia, isto é utlizado como objeto
 float[] grades;
 grades = new float[3];
 ```
+
+### Methods, Fields, Events, and Properties
+
+Metodos em C# podem ser sobrecarregados, isto é podem ser criados mais um medoto com o mesmo nome, considerando que os mesmos tenham parametros diferentes (quantidade ou tipo). 
+
+No auto preenchimento do VisualStudio, são mostrados todos os metodos com a mesmo nome(sobrecarga)
+
+Nas assinaturas de metodos, é possivel incluir uma palavra chave 'params', sempre como o ultimo parametro para indicar a possibilidade de passar qualquer numero de parametros para o metodo. Que será interpretado como um array de parametros
+
+```c
+static void WriteResult(string description, params float[] result)
+{
+    Console.WriteLine("{0}: {1}", description, result);
+}
+```
+
+No exemplo acima, "Console.WriteLine" tambem se comporta como um metodo sendo chamado com a keyword params na assintatura para aceitar um numero de parametros variavel (do tipo objeto)
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
