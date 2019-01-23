@@ -58,7 +58,7 @@ float[] grades;
 grades = new float[3];
 ```
 
-### Methods, Fields, Events, and Properties
+### Methods
 
 Metodos em C# podem ser sobrecarregados, isto é podem ser criados mais um medoto com o mesmo nome, considerando que os mesmos tenham parametros diferentes (quantidade ou tipo). 
 
@@ -74,6 +74,42 @@ static void WriteResult(string description, params float[] result)
 ```
 
 No exemplo acima, "Console.WriteLine" tambem se comporta como um metodo sendo chamado com a keyword params na assintatura para aceitar um numero de parametros variavel (do tipo objeto)
+
+### Fields and Properties
+
+C# possui implementações para getters e setters.
+
+```c
+public string Name
+{
+    get; set;
+}
+```
+
+```c
+private string _name;
+public string Name
+{
+    get
+    {
+        reuturn _name    
+    }
+    set
+    {
+        if(!String.IsNullOrEmpty(value))
+        {
+            _name = value
+        }
+    }
+}
+```
+
+Os dois exemplos são duas formas de usar getter e setters.
+
+
+
+### Events
+
 
 ### CLI
 
