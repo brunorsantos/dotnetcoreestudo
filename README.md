@@ -104,11 +104,36 @@ public string Name
 }
 ```
 
-Os dois exemplos são duas formas de usar getter e setters.
+Os dois exemplos são duas formas de usar getter e setters. em que na chamada basta utlizar classe.Name;
 
 
 
 ### Events
+Explicar delegates
+
+### Using (finaly ou catch)
+
+https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/using-statement
+
+### Polimorfismo
+
+Para utilizar o polimorfirsmo é necessario declarar o metodos como virtuais.
+A clausula virtual permite que o metodo seja sobrescrito por um metodo de classe filha. (Utilizando clasula overrides).
+
+Em tempo de execucao quando um metodo virtual é executado, ele verifica se o objeto é uma instancia de uma classe filha com medodo que sobrescreve o metodo como virtual.
+
+Metodos de classes abstratas são sempre virtuais
+
+Explicar virtual e overrides, explicar que metodos de classes abstratas são virtuais
+
+### Interfaces
+
+Interfaces são declaradas sempre com a letra I no inicio. 
+Elas são estendidas na mesma sintaxe que heranças. Caso uma interface seja usada junto com uma herança, ela deve ser extendida por ultimo.
+
+Interfaces importantes: 
+
+IDisposable, IEnumerable, INotifyPropertyChanges, IComparable
 
 
 ### CLI
