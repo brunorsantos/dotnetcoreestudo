@@ -8,7 +8,23 @@ namespace Grades
 {
     public class GradeBook
     {
-        public String Name;
+
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
+
         public GradeBook()
         {
             grades = new List<float>();
