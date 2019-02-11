@@ -189,6 +189,42 @@ public class OperationResult<T>
 }
 ```
 
+Para utlizar a classe, tanto ao instanciar, quanto para definir um tipo, deve se passar o tipo do 'T'
+
+```c
+public OperationResult<decimal> CalculateSuggestedPrice(decimal markupPercent) {
+    var message = "";
+    if (markupPercent <= 0m) 
+    {
+        message = "Invalid";
+    } else if (markupPercent < 10) {
+        message = "Bellow recomended";
+    }
+    var value = this.Cost + (this.Cost * markupPercent / 100);
+    var operationalResult = new OperationResult<decimal>(value, message);
+    return operationalResult;
+}
+```
+
+Para metodos genericos, o tipo 'T' poder ser definido tanto na classe, ou entao na propria chamada do metodo.
+
+```c
+public T RetrieveValue<T>(string sql, T defaulValue)
+{
+    T value = defaulValue;
+
+    return value;
+}
+```
+
+```c
+var actual = repository.RetrieveValue<string>("Select...", "test");
+```
+
+Generic constraints servem para limitar que qual o tipo da generic
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
