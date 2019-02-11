@@ -86,8 +86,11 @@ namespace Acme.Biz.Tests
                 "\r\nInstructions: standard delivery");
 
             // Act
-            var actual = vendor.PlaceOrder(product, 12,
-                new DateTimeOffset(2018, 10, 25, 0, 0, 0, new TimeSpan(-7, 0, 0)));
+            //var actual = vendor.PlaceOrder(product, 12,
+            //    new DateTimeOffset(2018, 10, 25, 0, 0, 0, new TimeSpan(-7, 0, 0)));
+
+            var actual = vendor.PlaceOrder(product, 12,null);
+
 
             //// Assert
             //Assert.AreEqual(expected.Success, actual.Success);

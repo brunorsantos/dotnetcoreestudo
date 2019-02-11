@@ -42,5 +42,12 @@ namespace Acme.Biz
 
             return success;
         }
+
+        public T RetrieveValue<T>(string sql, T defaulValue)
+        {
+            T value = defaulValue;
+
+            return value;
+        }
     }
 }
