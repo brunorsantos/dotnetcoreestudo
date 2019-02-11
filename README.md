@@ -136,6 +136,59 @@ Interfaces importantes:
 IDisposable, IEnumerable, INotifyPropertyChanges, IComparable
 
 
+
+
+## Best Practices - Collections and Generics
+
+### Intro
+
+Dois tipo de collection, lists e dictinaries.
+
+### Array
+
+Possui tamanho fixo que deve ser definido no incio do codigo
+Declarando um array:
+```C
+string[] colorOptions = new string[5]
+```
+
+Pode se utilizar 'var' como tipo implicito para declarar um array, em que o tipo será o mesmo tipo utilizado na instancia
+
+```c
+var colorOptions = new string[5]
+```
+
+Inicializando array:
+
+```c
+string[] colorOptions = { "Red", "Espresso", "white", "Navy"};
+```
+
+Existem metodos estaticos da classe System.Array como 'indexOf()' e metodos de instancia como 'setValue()'
+
+
+### Generic
+
+Permite definir um tipo de dado a ser passado ao instanciar uma classe. Por convenção se utliza 'T'.
+
+```c
+public class OperationResult<T>
+{
+    public OperationResult()
+    {
+    }
+
+    public OperationResult(T success, string message) : this()
+    {
+        this.Success = success;
+        this.Message = message;
+    }
+
+    public T Success { get; set; }
+    public string Message { get; set; }
+}
+```
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
