@@ -84,5 +84,30 @@ namespace Acme.Biz
                                                         this.Email);
             return confirmation;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || obj.GetType() != this.GetType() )
+            {
+                return false;
+            }
+
+            Vendor compareVendor = obj as Vendor;
+            if (compareVendor != null &&
+                this.VendorId == compareVendor.VendorId &&
+                this.CompanyName == compareVendor.CompanyName &&
+                this.Email == compareVendor.Email
+                )
+            {
+                return true;
+            }
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
