@@ -264,6 +264,11 @@ expected.Add(new Vendor()
 
 Para pegar um elemento especifico, basta utlizar o indice da lista: expected[1]
 
+Tipos de listas:
+System.Collections.Generics.List<T>
+System.Collections.Generics.LinkedList<T>
+System.Collections.Generics.Queue<T>
+System.Collections.Generics.Stack<T>
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
