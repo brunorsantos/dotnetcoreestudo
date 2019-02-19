@@ -225,6 +225,50 @@ Generic constraints servem para limitar que qual o tipo da generic
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
 
+### Generic List
+
+Declarando:
+```c
+var colorOptions = new List<string>();
+```
+
+Inserindo:
+```c
+colorOptions.Add("Navy");
+colorOptions.Insert(2, "purple");
+```
+Passando o indice no insert, o item o restando da lista passa para a proxima posição
+
+Removendo:
+```c
+colorOptions.Remove("white");
+```
+Remove apenas a primeira ocorrência
+
+Inicializando em massa:
+
+```c
+var colorOptions = new List<string>() { "white", "Espresso", "Navy", "purple" };
+```
+
+Lista de objeto (como inicializacao de atributos de um objeto em massa)
+
+```c
+var expected = new List<Vendor>();
+
+expected.Add(new Vendor()
+{ VendorId = 1, CompanyName = "Test", Email = "teste@teste.com" });
+expected.Add(new Vendor()
+{ VendorId = 2, CompanyName = "Test", Email = "teste1@teste.com" });
+```
+
+Para pegar um elemento especifico, basta utlizar o indice da lista: expected[1]
+
+Tipos de listas:
+System.Collections.Generics.List<T>
+System.Collections.Generics.LinkedList<T>
+System.Collections.Generics.Queue<T>
+System.Collections.Generics.Stack<T>
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
