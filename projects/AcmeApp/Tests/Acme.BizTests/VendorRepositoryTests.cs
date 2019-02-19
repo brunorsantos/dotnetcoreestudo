@@ -48,6 +48,25 @@ namespace Acme.Biz.Tests
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void RetrieveWithKeysTest()
+        {
+            var repository = new VendorRepository();
+            var expected = new Dictionary<string, Vendor>()
+            {
+                {"ABC Corp", new Vendor()
+                     { VendorId= 1, CompanyName = "ABC coorp", Email= "abc@coorp.com" }
+                },
+                {"XYZ Corp", new Vendor()
+                     { VendorId= 2, CompanyName = "XYZ coorp", Email= "abc@coorp.com" }
+                }
+            };
+
+            var actual = repository.RetrieveWithKeys();
+
+            CollectionAssert.AreEqual(actual, expected);
+        }
     }
-   
+
 }
