@@ -269,6 +269,81 @@ System.Collections.Generics.List<T>
 System.Collections.Generics.LinkedList<T>
 System.Collections.Generics.Queue<T>
 System.Collections.Generics.Stack<T>
+
+### Generic Dictionaries
+
+Possuem chave e valor, os tipos dos dois devem ser passados ao instanciar um dicionario
+
+```c
+var states = new Dictionary<string, string>();
+states.Add("CA", "California");
+states.Add("WA", "Washington");
+states.Add("NY", "New York");
+
+```
+
+
+É possivel inicializar em massa um dicionario
+
+```c
+var vendors = new Dictionary<string, Vendor>()
+{
+    {"ABC Corp", new Vendor()
+         { VendorId= 1, CompanyName = "ABC coorp", Email= "abc@coorp.com" }
+    },
+    {"XYZ Corp", new Vendor()
+         { VendorId= 2, CompanyName = "XYZ coorp", Email= "abc@coorp.com" }
+    }
+};
+```
+Para recuperar um item do dicionario pela chave(exemplo utilizando metodo do dicionario que verifica se uma chave existe):
+
+```c
+if (vendors.ContainsKey("ABC Corp"))
+{
+    Console.WriteLine(vendors["ABC Corp"]);
+}
+```
+
+Para iterar nos valores do dicionario, basta usar o metodo value
+
+```c
+foreach (var vendor in vendors.Values)
+{
+    Console.WriteLine(vendor);
+}
+```
+
+Para iterar em chave e valor:
+
+```
+foreach (var element in vendors)
+{
+    var vendor = element.Value;
+    var key = element.Key;
+    Console.WriteLine($"Key: {key} Value: {vendor}")
+}
+```
+
+Dicionarios usados normalmente são:
+System.Collections.Generic.Dictionary<Tkey,TValue>
+System.Collections.Generic.SortedList<Tkey,TValue>
+System.Collections.Generic.SortedDictionary<Tkey,TValue>
+
+### Generic Collection Interfaces
+
+Intefaces utilizadas em generic collections:
+
+![](https://raw.githubusercontent.com/brunorsantos/dotnetcoreestudo/master/genericcolletcioninterfaces.png)
+
+Sendo que as classes Array, list, dictionary implentam as seguintes:
+
+![](https://raw.githubusercontent.com/brunorsantos/dotnetcoreestudo/master/genericcolletcioninterfaces1.png)
+
+Sendo que o array implementa os metodos em tempo de execução, o que faz permitir que os metodos só sejam utilizados quando passados como parametro ou retornados como uma instancia da interface de IList ou ICollection
+
+Quando o tipo retornado é IEnumerable<T> a generic collection retornada, será imutavel, e nao terá metodos de informacao da lista como 'count'
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
