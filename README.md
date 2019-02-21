@@ -140,6 +140,9 @@ IDisposable, IEnumerable, INotifyPropertyChanges, IComparable
 
 ## Best Practices - Collections and Generics
 
+[Best Practices - Collections and Generics 2015](https://app.pluralsight.com/library/courses/csharp-best-practices-collections-generics/table-of-contents)
+
+
 ### Intro
 
 Dois tipo de collection, lists e dictinaries.
@@ -344,11 +347,124 @@ Sendo que o array implementa os metodos em tempo de execução, o que faz permit
 
 Quando o tipo retornado é IEnumerable<T> a generic collection retornada, será imutavel, e nao terá metodos de informacao da lista como 'count'
 
+## Building Applications with ASP.NET MVC 4]
+[Building Applications with ASP.NET MVC 4](https://app.pluralsight.com/library/courses/mvc4-building/table-of-contents)
+
+### Intro
+
+Necessarios: Vistual Studio, ISS...
+
+Utiliza o Razor para processar Views em HTML, em que é necessario tipificar a model passada como parametro no incio do aquivo chtml.
+
+Na raiz do projeto principal da solucao WEB MVC criada no Visual studio estão os diretorios:
+Controllers
+Models
+View
+Scripts - (Utilizados para o js)
+Content - (CSS e imagens)
+
+### Controllers
+
+No arquivo Global.asax.cs, são registradas configurações da aplicacao. Em cada requisição o metodo "Applicaction_Start()" da classe é executado. Em que se encontra o metodo estatico RegisterRoutes da Classe RouteConfig.
+
+```c
+public static void RegisterRoutes(RouteCollection routes)
+{
+    routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+    routes.MapRoute(
+        name: "Default",
+        url: "{controller}/{action}/{id}",
+        defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+    );
+}
+}
+```
+
+No arquivo possuirá uma rota default em que se é exgida no URL um texto para o controller um para action e um para ID. 
+Em que ao utilizar seremos redirecionados para o que foi passado na URL.
+
+Nos controllers temos acesso a uma 'fachada' RouteData em que podemos pegar os valores construidos como: RouteData.Values["controller"].
+
+Definindo nova rota, para a URL /cuisine/[valor], que procurará o controller:
+
+```p
+routes.MapRoute("Cuisine",
+    "cuisine/{name}",
+    new { controller = "Cuisine", action = "Search", name = "" });
+```
+
+Action de exemplo no controller:
+
+```c
+public ActionResult Search(string name = "French")
+{
+    var ret = Server.HtmlEncode(name);
+    return Content(ret);
+}
+```
+
+Pode ser usar selectors antes dos metodos para definis ação: [HttpGet] [HttpPost]
+
+Filtros podem ser registrados para a ação, o controller, ou globalmente para a aplicacao (feito no arquivo de configuracao global)
+
+
+Sendo que o parametro name pode ser passado na rota definida, ou ate como queryString
+
+Possiveis Action Results:
+![](https://raw.githubusercontent.com/brunorsantos/dotnetcoreestudo/master/actionresult.png)
+
+
+### Razor Views
+
+Quando um controller retorna uma view, como padrao o aquivo é procurado na mesma estrutura da action do controller na diretorio 'view'.
+
+São passados como padrão para a view, o objeto ViewBag e o objeto da model que é passado como parametro no controller
+
 ### CLI
 
 https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new?tabs=netcore21
 
 Com dotnet new é possivel criar vários tipos de projeto. (Console, api, mvc...)
+
+Na fachada HTML existem medodos para rederizar html com utilidades como escapar tags html...
+
+```
+@Html.DisplayNameFor(model => model.Name)
+```
+
+É possivel também criar bloco de codigos (soltos ou com foreach):
+
+```
+@{
+    ViewBag.Title = "Index";
+}
+```
+
+```html
+@foreach (var item in Model) {
+    @:Review
+    <div>
+    <h4>@item.Id</h4>
+    </div>
+}
+
+```
+
+O arquivo de layout (master) é definido em view/_ViewStart.cshtml. (que pode ser definido em cada diretorio)
+No arquivo de layout no metodo @RenderBody(), é o local que a pagina chamada do Razor é renderizada.
+No arquivo de layout é possivel definir sessoes em @RenderSession() para definirmos locais para sessoes serem utilizadas.
+
+
+No metido ActionLink podemos criar uma ancora diretamente para um action de um controller
+
+```
+@Html.ActionLink("Contact", "Contact", "Home")
+```
+
+### Working with data
+
+Em System.Data.Entity
 
 
 ### Estrutura basica
