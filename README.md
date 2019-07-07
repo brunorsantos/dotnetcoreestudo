@@ -115,6 +115,8 @@ Explicar delegates
 
 https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/using-statement
 
+https://app.pluralsight.com/player?course=csharp-fundamentals-dev&author=scott-allen&name=21d914d0-b0ef-4232-b4de-e1a0802dec94&clip=10&mode=live
+
 ### Polimorfismo
 
 Para utilizar o polimorfirsmo é necessario declarar o metodos como virtuais.
